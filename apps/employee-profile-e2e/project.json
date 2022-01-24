@@ -1,0 +1,28 @@
+{
+  "root": "apps/employee-profile-e2e",
+  "sourceRoot": "apps/employee-profile-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/employee-profile-e2e/cypress.json",
+        "devServerTarget": "employee-profile:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "employee-profile:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/employee-profile-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["employee-profile"]
+}

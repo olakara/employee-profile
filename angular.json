@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "employee-profile": "apps/employee-profile",
+    "employee-profile-e2e": "apps/employee-profile-e2e"
+  }
+}
