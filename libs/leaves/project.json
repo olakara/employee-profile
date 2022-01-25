@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/leaves",
+  "sourceRoot": "libs/leaves/src",
+  "prefix": "ogc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/leaves"],
+      "options": {
+        "jestConfig": "libs/leaves/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/leaves/src/**/*.ts",
+          "libs/leaves/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

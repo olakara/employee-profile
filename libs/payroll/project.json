@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/payroll",
+  "sourceRoot": "libs/payroll/src",
+  "prefix": "ogc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/payroll"],
+      "options": {
+        "jestConfig": "libs/payroll/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/payroll/src/**/*.ts",
+          "libs/payroll/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

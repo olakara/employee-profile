@@ -1,7 +1,16 @@
 {
   "version": 2,
   "projects": {
+    "contact": "libs/contact",
+    "edit-employee": "libs/edit-employee",
+    "education": "libs/education",
     "employee-profile": "apps/employee-profile",
-    "employee-profile-e2e": "apps/employee-profile-e2e"
+    "employee-profile-e2e": "apps/employee-profile-e2e",
+    "general-info": "libs/general-info",
+    "job": "libs/job",
+    "leaves": "libs/leaves",
+    "new-employee": "libs/new-employee",
+    "payroll": "libs/payroll",
+    "view-employee": "libs/view-employee"
   }
 }

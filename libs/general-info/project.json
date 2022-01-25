@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/general-info",
+  "sourceRoot": "libs/general-info/src",
+  "prefix": "ogc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/general-info"],
+      "options": {
+        "jestConfig": "libs/general-info/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/general-info/src/**/*.ts",
+          "libs/general-info/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

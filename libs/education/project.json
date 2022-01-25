@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/education",
+  "sourceRoot": "libs/education/src",
+  "prefix": "ogc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/education"],
+      "options": {
+        "jestConfig": "libs/education/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/education/src/**/*.ts",
+          "libs/education/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
