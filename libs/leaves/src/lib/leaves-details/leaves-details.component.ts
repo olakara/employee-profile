@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal, NgbPanelChangeEvent } from '@ng-bootstrap/ng-bootstrap';
+import { CountryFormComponent } from '../components/country-form/country-form.component';
+import { ApiServiceService } from '../services/api-service.service';
 
 @Component({
   selector: 'ogc-leaves-details',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeavesDetailsComponent implements OnInit {
 
-  constructor() { }
+  disabled = false;
 
-  ngOnInit(): void {
-  }
+   constructor(apiService: ApiServiceService,public modalService: NgbModal) {
+     
+    }
+
+   ngOnInit(): void {
+     
+   }
+
+   public toggleAccordian(props: NgbPanelChangeEvent) {
+     console.log(props)
+   }
+
+   public onAddCountryButton() {
+      const modalRef = this.modalService.open(CountryFormComponent);
+      modalRef.componentInstance.submitForm.subscribe( (data: any) => {
+        console.log('Data from form', data);
+      });
+      
+   }
 
 }

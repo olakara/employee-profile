@@ -1,1 +1,35 @@
-<p>leaves-details works!</p>
+<h5> Details</h5>
+<ngb-accordion [closeOthers]="true" activeIds="panel-country" (panelChange)="toggleAccordian($event)">
+    <ngb-panel id="panel-country">
+      <ng-template ngbPanelHeader let-opened="opened">
+        <div class="d-flex align-items-center justify-content-between">
+          <h5 class="m-0" ngbPanelToggle >Country</h5>
+          <div>
+            <button class="btn btn-sm btn-primary ml-2" (click)="onAddCountryButton()"><i class="bi bi-plus-circle"></i> Add New</button>
+            &nbsp;
+            <button ngbPanelToggle class="btn btn-link p-0" *ngIf="!opened"> <i class="bi bi-caret-right"></i> </button>
+            <button ngbPanelToggle class="btn btn-link p-0" *ngIf="opened"> <i class="bi bi-caret-down"></i> </button>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <ogc-country></ogc-country>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel id="panel-blood-type">
+        <ng-template ngbPanelHeader let-opened="opened">
+          <div class="d-flex align-items-center justify-content-between">
+            <h5 class="m-0">Blood Type</h5>
+            <div>
+              <button class="btn btn-sm btn-primary ml-2"><i class="bi bi-plus-circle"></i> Add New</button>
+              &nbsp;
+              <button ngbPanelToggle class="btn btn-link p-0" *ngIf="!opened"> <i class="bi bi-caret-right"></i> </button>
+              <button ngbPanelToggle class="btn btn-link p-0" *ngIf="opened"> <i class="bi bi-caret-down"></i> </button>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <ogc-blood-type></ogc-blood-type>
+        </ng-template>
+      </ngb-panel> 
+  </ngb-accordion>
