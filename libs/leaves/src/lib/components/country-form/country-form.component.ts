@@ -1,6 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { ICountryFormModel } from '../../models/country-form.model';
+import { ApiServiceService } from '../../services/api-service.service';
+
 
 @Component({
   selector: 'ogc-country-form',
@@ -9,14 +12,15 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 export class CountryFormComponent implements OnInit {
 
-  @Output() submitForm: EventEmitter<any> = new EventEmitter();
+  @Output() submitForm: EventEmitter<ICountryFormModel> = new EventEmitter();
 
   countryForm: FormGroup;
-  constructor(public modal: NgbActiveModal,public fb: FormBuilder) { 
+  constructor(public modal: NgbActiveModal,public fb: FormBuilder, public api: ApiServiceService) { 
 
     this.countryForm = fb.group({
-      name: new FormControl('',[Validators.required]),
-      code: new FormControl('',[Validators.required, Validators.maxLength(4)])
+      id: [''],
+      name: ['',[Validators.required]],
+      code: ['',[Validators.required, Validators.maxLength(4)]]
     });
   }
 
@@ -24,7 +28,12 @@ export class CountryFormComponent implements OnInit {
   }
 
   submit() {
-    this.submitForm.emit(this.countryForm.value);
+    this.api.addCountry(this.countryForm.value).subscribe( (response: any) => {
+      this.submitForm.emit(this.countryForm.value);
+      this.modal.close();
+    },(err) => {
+      alert(err); // display error...
+    });    
   }
 
 }

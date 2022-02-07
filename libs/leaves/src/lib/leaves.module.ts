@@ -14,7 +14,7 @@ import { BloodTypeFormComponent } from './components/blood-type-form/blood-type-
 @NgModule({
   imports: [
     CommonModule,
-    NgbModule,
+    NgbModule,    
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild([
