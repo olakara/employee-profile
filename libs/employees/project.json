@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/employees",
+  "sourceRoot": "libs/employees/src",
+  "prefix": "ogc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/employees"],
+      "options": {
+        "jestConfig": "libs/employees/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/employees/src/**/*.ts",
+          "libs/employees/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

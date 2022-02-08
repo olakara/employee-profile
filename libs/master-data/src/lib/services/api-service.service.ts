@@ -3,6 +3,8 @@ import { catchError, Observable, retry, throwError } from 'rxjs';
 import { ICountryFormModel } from '../models/country-form.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
+const COUNTRY_URL = 'http://localhost:3000/country'
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +13,7 @@ export class ApiServiceService {
   constructor(private http: HttpClient) { }
 
   addCountry(country: ICountryFormModel): Observable<any> {
-    return this.http.post('http://localhost/country',country).pipe(
+    return this.http.post(COUNTRY_URL,country).pipe(
       retry(3),
       catchError(this.handleError));
   }

@@ -1,8 +1,22 @@
 <header>
-    <ul>
-        <li><a routerLink="new-employee">Create Employee</a></li>        
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active text-center" routerLink="employees" style="display:grid">
+              <i class="bi bi-people-fill" style="font-size: 2rem;"></i> 
+              Employees
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-center" routerLink="master-data" style="display:grid">
+            <i class="bi bi-stack" style="font-size: 2rem;"></i>
+              Master Data
+          </a>
+        </li>       
+      </ul>
+    <!-- <ul>
+        <li><a routerLink="new-employee">Create Employee</a></li>
         <li><a routerLink="edit-employee">Edit Employee</a></li>
-        <li><a routerLink="view-employee">View Employee</a></li>            
-    </ul>
+        <li><a routerLink="view-employee">View Employee</a></li>
+    </ul> -->
 </header>
 <router-outlet ></router-outlet>

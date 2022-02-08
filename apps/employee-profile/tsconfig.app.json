@@ -16,7 +16,9 @@
     "../../libs/contact/src/index.ts",
     "../../libs/new-employee/src/index.ts",
     "../../libs/edit-employee/src/index.ts",
-    "../../libs/view-employee/src/index.ts"
+    "../../libs/view-employee/src/index.ts",
+    "../../libs/master-data/src/index.ts",
+    "../../libs/employees/src/index.ts"
   ],
   "exclude": ["**/*.test.ts", "**/*.spec.ts"]
 }

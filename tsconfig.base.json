@@ -18,9 +18,11 @@
       "@ogc/contact": ["libs/contact/src/index.ts"],
       "@ogc/edit-employee": ["libs/edit-employee/src/index.ts"],
       "@ogc/education": ["libs/education/src/index.ts"],
+      "@ogc/employees": ["libs/employees/src/index.ts"],
       "@ogc/general-info": ["libs/general-info/src/index.ts"],
       "@ogc/job": ["libs/job/src/index.ts"],
       "@ogc/leaves": ["libs/leaves/src/index.ts"],
+      "@ogc/master-data": ["libs/master-data/src/index.ts"],
       "@ogc/new-employee": ["libs/new-employee/src/index.ts"],
       "@ogc/payroll": ["libs/payroll/src/index.ts"],
       "@ogc/view-employee": ["libs/view-employee/src/index.ts"]

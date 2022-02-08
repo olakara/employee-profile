@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/master-data",
+  "sourceRoot": "libs/master-data/src",
+  "prefix": "ogc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/master-data"],
+      "options": {
+        "jestConfig": "libs/master-data/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/master-data/src/**/*.ts",
+          "libs/master-data/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

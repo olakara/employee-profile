@@ -6,9 +6,11 @@
     "education": "libs/education",
     "employee-profile": "apps/employee-profile",
     "employee-profile-e2e": "apps/employee-profile-e2e",
+    "employees": "libs/employees",
     "general-info": "libs/general-info",
     "job": "libs/job",
     "leaves": "libs/leaves",
+    "master-data": "libs/master-data",
     "new-employee": "libs/new-employee",
     "payroll": "libs/payroll",
     "view-employee": "libs/view-employee"
