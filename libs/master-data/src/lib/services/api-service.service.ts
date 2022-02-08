@@ -18,6 +18,12 @@ export class ApiServiceService {
       catchError(this.handleError));
   }
 
+  getAllCountrties() : Observable<any> {
+    return this.http.get(COUNTRY_URL).pipe(
+      retry(3),
+      catchError(this.handleError));
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.

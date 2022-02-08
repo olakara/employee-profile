@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CountryFormComponent } from '../components/country-form/country-form.component';
+import { ICountryListingModel } from '../models';
 import { ApiServiceService } from '../services/api-service.service';
 
 @Component({
@@ -10,9 +11,14 @@ import { ApiServiceService } from '../services/api-service.service';
 })
 export class MasterDataHomeComponent implements OnInit {
 
-  constructor(apiService: ApiServiceService,public modalService: NgbModal) { }
+  countries: ICountryListingModel[] = [];
+  isCollapsed = false;
+  constructor(public apiService: ApiServiceService,public modalService: NgbModal) { }
 
   ngOnInit(): void {
+    this.apiService.getAllCountrties().subscribe(data => {
+      this.countries = data;
+    });
   }
 
   public onAddCountryButton() {
